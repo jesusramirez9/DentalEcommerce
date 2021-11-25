@@ -6,9 +6,12 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ResumenMailable;
 class OrderController extends Controller
 {
     //
+    
 
     public function index()
     {
@@ -63,6 +66,18 @@ class OrderController extends Controller
 
         $order->status = 2;
         $order->save();
+
+        
+       $items = json_decode($order->content);
+
+       foreach ($items as $item ) {
+           auth()->user()->products()->attach($item->id);
+       }
+       
+       $correo = new ResumenMailable(null);
+       Mail::to( auth()->user()->email)->send($correo);
+
+
 
         return redirect()->route('orders.show', $order);
     }

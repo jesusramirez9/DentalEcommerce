@@ -17,32 +17,46 @@ class SubcategorySeeder extends Seeder
     {
         //
         $subcategories = [
-            // Moda
-            [
-                'category_id' => 5,
-                'name' => 'Mujeres',
-                'slug' => Str::slug('Mujeres'),
-                'color' => true,
-                'size' => true
-            ],
-            [
-                'category_id' => 5,
-                'name' => 'Hombres',
-                'slug' => Str::slug('Hombres'),
-                'color' => true,
-                'size' => true
-            ],
-            [
-                'category_id' => 5,
-                'name' => 'Lentes',
-                'slug' => Str::slug('Lentes'),
 
+            /* Celulares y tablets */
+            [
+                'category_id' => 1,
+                'name' => 'dental',
+                'slug' => Str::slug('dental'),
+                'color' => true
+            ],
+
+            [
+                'category_id' => 1,
+                'name' => 'Accesorios para celulares',
+                'slug' => Str::slug('Accesorios para celulares'),
+            ],
+
+            [
+                'category_id' => 1,
+                'name' => 'Smartwatches',
+                'slug' => Str::slug('Smartwatches'),
+            ],
+
+            /* TV, audio y video */
+
+            [
+                'category_id' => 2,
+                'name' => 'dentales',
+                'slug' => Str::slug('dentales'),
             ],
             [
-                'category_id' => 5,
-                'name' => 'Relojes',
-                'slug' => Str::slug('Relojes'),
+                'category_id' => 2,
+                'name' => 'Audios',
+                'slug' => Str::slug('Audios'),
             ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Audio para autos',
+                'slug' => Str::slug('Audio para autos'),
+            ],
+         
 
         ];
 

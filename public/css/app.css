@@ -2783,7 +2783,11 @@ background-color: #FFF7F4;
   
     height: 100%;
 
-}.button__text{
+}.contenspace{
+    overflow-y: scroll;
+    height: 25rem;
+}
+.button__text{
 
 }.button__img{
     padding: 0 14px;

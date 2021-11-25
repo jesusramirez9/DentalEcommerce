@@ -97,7 +97,7 @@
 
         <div class="">
             <div class="mt-0 md:mt-8">
-                <div class="mytabs">
+                <div class="mytabs sa">
                     <input type="radio" name="mytabs" id="tabfree" checked="checked">
                     <label for="tabfree" class=" underlinetxt ">Descripción</label>
                     <div class="tab">
@@ -113,6 +113,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div>
+            @livewire('products-reviews', ['product' => $product])
         </div>
      
         <div class="text-center">

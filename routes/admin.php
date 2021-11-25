@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\OrderController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,12 @@ Route::post('products/{product}/files',[ProductController::class, 'files'])->nam
 
 Route::get('orders', [OrderController::class, 'index'])->name('admin.orders.index');
 Route::get('orders/{order}', [OrderController::class, 'show'])->name('admin.orders.show');
+
+
+Route::get('messages', [MessageController::class, 'index'])->name('admin.messages.index');
+Route::get('messages/{message}',[MessageController::class, 'show'])->name('admin.messages.show');
+Route::post('messages',[MessageController::class, 'store'])->name('admin.messages.store');
+
 
 Route::get('categories', [CategoryController::class,'index'])->name('admin.categories.index');
 Route::get('categories/{category}', ShowCategory::class)->name('admin.categories.show');

@@ -75,10 +75,11 @@
                 class=" xl:mx-6 text-white text-xs xl:text-sm bg-green-500 px-2 py-1 xl:px-6 rounded-md hidden md:block  {{ request()->is('contactanos') ? 'active linktran  bg-green-500 px-4 py-0.5 rounded-xl ' : '' }}">
                 Reservar Cita
             </a>
+          
 
-            <div class="mx-4  relative hidden md:block">
+            <div class="mx-4 relative hidden md:block">
                 @auth
-
+               
                     <x-jet-dropdown align="right" width="48">
                         <x-slot name="trigger">
 
@@ -103,10 +104,17 @@
                             <x-jet-dropdown-link href="{{ route('orders.index') }}">
                                 Mis ordenes
                             </x-jet-dropdown-link>
-
+                           
+                            <x-jet-dropdown-link href="{{ route('messages.index') }}">
+                               Notificaciones
+                            </x-jet-dropdown-link>
+                          
                             @role('admin')
                                 <x-jet-dropdown-link href="{{ route('admin.index') }}">
                                     Administrador
+                                </x-jet-dropdown-link>
+                                <x-jet-dropdown-link href="{{ route('admin.messages.index') }}">
+                                    Notificaciones
                                 </x-jet-dropdown-link>
                             @endrole
 
@@ -123,7 +131,7 @@
                             </form>
                         </x-slot>
                     </x-jet-dropdown>
-
+                   
                 @else
 
                     <x-jet-dropdown align="right" width="48">

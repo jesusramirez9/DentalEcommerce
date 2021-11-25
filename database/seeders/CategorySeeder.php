@@ -17,13 +17,13 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-                'name' => 'Celulares y tablets',
-                'slug' => Str::slug('Celulares y tablets'),
+                'name' => 'dental',
+                'slug' => Str::slug('dental'),
                 'icon' => '<i class="fas fa-mobile-alt"></i>'
             ],
             [
-                'name' => 'Tv, audio y video',
-                'slug' => Str::slug('Tv, audio y video'),
+                'name' => 'dentales',
+                'slug' => Str::slug('dentales'),
                 'icon' => '<i class="fas fa-tv"></i>'
             ],
             [

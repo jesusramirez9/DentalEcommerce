@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
@@ -34,9 +35,15 @@ Route::get('products/{product}', [ProductController::class, 'show'])->name('prod
 Route::get('search', SearchController::class)->name('search');
 
 Route::get('shopping-cart', ShoppingCart::class)->name('shopping-cart');
+Route::get('messages', [MessageController::class, 'index'])->name('messages.index');
+    Route::get('messages/{message}', [MessageController::class, 'show'])->name('messages.show');
+    Route::post('messages', [MessageController::class, 'store'])->name('messages.store');
+
+
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
+    
     Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
 
     Route::get('orders/create', CreateOrder::class)->name('orders.create');
@@ -53,9 +60,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('orders/{order}/pay', [OrderController::class, 'pay'])->name('orders.pay');
 
     Route::post('webhooks', WebhooksController::class);
-
-
-
 });
 
 
@@ -77,9 +81,9 @@ Route::get('especialidad', function () {
 })->name('especialidad');
 
 
-Route::get('contactanos',[ContactoController::class, 'index'])->name('contacto');
+Route::get('contactanos', [ContactoController::class, 'index'])->name('contacto');
 
-Route::post('contactanos',[ContactoController::class, 'store'])->name('contacto.store');
+Route::post('contactanos', [ContactoController::class, 'store'])->name('contacto.store');
 
 
 

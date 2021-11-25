@@ -60,8 +60,24 @@ class User extends Authenticatable implements MustVerifyEmail
         'profile_photo_url',
     ];
 
+     //Relacion muchos a muchos
+
+     public function products(){
+        return $this->belongsToMany(Product::class);
+    }
+
+    public function reviews(){
+        return $this->hasMany(Review::class);
+    }
+
 
     public function orders(){
         return $this->hasMany(Order::class);
     }
+    //Relacion uno a muchos
+
+    public function message(){
+        return $this->hasMany(Message::class);
+    }
+
 }

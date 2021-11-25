@@ -38,6 +38,17 @@ class PaymentOrder extends Component
         $this->order->status = 2;
        $this->order->save();
 
+       $items = json_decode($this->order->content);
+
+       foreach ($items as $item ) {
+           auth()->user()->products()->attach($item->id);
+       }
+       
+       $correo = new ResumenMailable(null);
+       Mail::to( auth()->user()->email)->send($correo);
+
+
+
         return redirect()->route('orders.show', $this->order);
     }
     // cambie estso
