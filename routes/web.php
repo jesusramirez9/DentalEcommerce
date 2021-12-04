@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
@@ -79,6 +80,8 @@ Route::get('tratamiento', function () {
 Route::get('especialidad', function () {
     return view('web.especialidad');
 })->name('especialidad');
+
+Route::get('enviarsms', [NotificationController::class, 'sendSmsNotificaition'])->name('notification');
 
 
 Route::get('contactanos', [ContactoController::class, 'index'])->name('contacto');

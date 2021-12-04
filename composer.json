@@ -18,7 +18,8 @@
         "livewire/livewire": "^2.5",
         "lyracom/rest-php-sdk": "^4.0",
         "mercadopago/dx-php": "^2.4",
-        "spatie/laravel-permission": "^4.3"
+        "spatie/laravel-permission": "^4.3",
+        "vonage/client": "^2.4"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
